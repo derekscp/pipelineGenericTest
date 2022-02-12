@@ -13,6 +13,7 @@ pipelines:
             - touch test.txt; echo $?
             - echo $?
             - if [ $? = 0 ]; then exit 1; fi
+            - add_run_variables step_test_var="step_test"
  
       - name: S_WF_019_002
         type: Bash
