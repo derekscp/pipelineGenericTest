@@ -8,6 +8,9 @@ pipelines:
             - add_run_variables step_1_var="step_1"
           onExecute:
             - echo "step 1 is running"
+            - touch test.txt
+            - echo $?
+            - if [ $? = 0 ]; then echo "dones"; fi
  
       - name: S_WF_019_002
         type: Bash
