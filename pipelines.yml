@@ -35,7 +35,7 @@ pipelines:
           onStart:
             - echo "step_1_var - ${step_1_var}"
             - if [ "$step_1_var" != "step_1" ]; then exit 1; fi
-            - add_run_variables step_3_var="step_3"
+            - add_run_variables step_3_var="step_32"
           onExecute:
             - echo "step 3 is running"
  
