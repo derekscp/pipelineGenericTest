@@ -10,7 +10,7 @@ pipelines:
             - echo "step 1 is running"
             - touch test.txt
             - echo $?
-            - if [ $? = 0 ]; then echo "dones"; fi
+            - if [ $? = 0 ]; then exit 1; fi
  
       - name: S_WF_019_002
         type: Bash
