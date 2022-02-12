@@ -7,7 +7,9 @@ pipelines:
           onStart:
             - add_run_variables step_1_var="step_1"
           onExecute:
+            - echo $?
             - echo "step 1 is running"
+            - echo $?
             - touch test.txt
             - echo $?
             - if [ $? = 0 ]; then exit 1; fi
