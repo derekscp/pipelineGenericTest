@@ -26,7 +26,7 @@ pipelines:
             - pwd
             - touch test.sh
             - echo "#!/bin/bash" >> test.sh
-            - echo 'echo "Hi There"' >> test.sh
+            - echo 'echo "This is test.sh running"' >> test.sh
             - echo 'exit 1' >> test.sh
             - ls -l
             - chmod +x test.sh
