@@ -14,6 +14,7 @@ pipelines:
             - echo "hellotest:" >> Makefile
             - echo '*****echo "hello world"' >> Makefile
             - echo '*****exit 1' >> Makefile
+            - cat -e -t -v  Makefile
             - make hellotest
             - touch test.txt; echo $?
             - echo $?
