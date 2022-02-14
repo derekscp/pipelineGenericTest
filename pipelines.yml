@@ -10,9 +10,8 @@ pipelines:
             - echo $?
             - echo "step 1 is running"
             - echo $?
-            - touch Makefile
-            - echo "hellotest: exit 1" >> Makefile
-            - cat -e -t -v  Makefile
+            - touch Makefile;
+            - echo "hellotest adfasdf" >> Makefile
             - make hellotest
             - touch test.txt; echo $?
             - echo $?
