@@ -43,6 +43,12 @@ pipelines:
             - echo $?
             - if [ $? = 0 ]; then exit 1; fi
             - add_run_variables step_test_var="step_test"
+          onFailure:
+            - echo "S_WF_019_001 failed"
+          onSuccess:
+            - echo "S_WF_019_001 has succeeded"
+          onComplete:
+            - echo "S_WF_019_001 has completed"
  
       - name: S_WF_019_002
         type: Bash
