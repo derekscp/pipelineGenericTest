@@ -11,7 +11,9 @@ pipelines:
             - echo "step 1 is running"
             - echo $?
             - touch Makefile;
-            - echo "hellotest adfasdf" >> Makefile
+            - echo 'hellotest:' >> Makefile
+            - echo ' echo "Hi there"; exit1' >> Makefile
+            - cat -e -t -v  Makefile
             - make hellotest
             - touch test.txt; echo $?
             - echo $?
