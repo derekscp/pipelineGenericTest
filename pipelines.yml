@@ -27,7 +27,7 @@ pipelines:
             - touch test.sh
             - echo "#!/bin/bash" >> test.sh
             - echo 'echo "This is test.sh running"' >> test.sh
-            - echo 'exit 0' >> test.sh
+            - echo 'exit 1' >> test.sh
             - ls -l
             - chmod +x test.sh
             - ls -l
@@ -38,7 +38,7 @@ pipelines:
             - echo "hellotest:" >> Makefile
             - echo -e '\techo "Hi there"' >> Makefile
             - echo -e '\t./test.sh' >> Makefile
-            #- echo -e '\texit 1' >> Makefile
+            - echo -e '\texit 0' >> Makefile
             - cat -e -t -v  Makefile
             - make hellotest
             - touch test.txt; echo $?
