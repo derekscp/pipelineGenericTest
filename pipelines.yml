@@ -1,3 +1,12 @@
+resources:
+  - name j_pipe_git_files
+    type: GitRepo
+    configuration: 
+      gitProvider: derekppipelines
+      path: derekscp/pipelineGenericTest
+      branches:
+        include: main
+
 pipelines:
   - name: S_WF_019
     steps:
@@ -10,9 +19,10 @@ pipelines:
             - echo $?
             - echo "step 1 is running"
             - echo $?
-            - touch Makefile;
-            - echo 'hellotest:' >> Makefile
-            - echo ' echo "Hi there"; exit1' >> Makefile
+            - cd $res_j_pipe_git_files_path
+            #- touch Makefile;
+            #- echo 'hellotest:' >> Makefile
+            #- echo ' echo "Hi there"; exit1' >> Makefile
             - cat -e -t -v  Makefile
             - make hellotest
             - touch test.txt; echo $?
