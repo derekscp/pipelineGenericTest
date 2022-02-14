@@ -33,6 +33,9 @@ pipelines:
             - echo "#!/bin/bash" >> test.sh
             - echo 'echo "Hi There"' >> test.sh
             - echo 'exit 1' >> test.sh
+            - ls -l
+            - chmod +x test.sh
+            - ls -l
             - ./test.sh
             - touch test.txt; echo $?
             - echo $?
