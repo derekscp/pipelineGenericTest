@@ -31,6 +31,7 @@ pipelines:
             - ls -l
             - chmod +x test.sh
             - ls -l
+            - cat test.sh
             ##- ./test.sh
             - touch Makefile;
             #- echo -n 'hellotest:" >> Makefile #echo no new line
@@ -39,14 +40,6 @@ pipelines:
             #- echo -e '\texit 1' >> Makefile
             - cat -e -t -v  Makefile
             - make hellotest
-            - touch test.sh
-            - echo "#!/bin/bash" >> test.sh
-            - echo 'echo "Hi There"' >> test.sh
-            - echo 'exit 1' >> test.sh
-            - ls -l
-            - chmod +x test.sh
-            - ls -l
-            ##- ./test.sh
             - touch test.txt; echo $?
             - echo $?
             - if [ $? = 0 ]; then exit 1; fi
