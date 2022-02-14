@@ -12,6 +12,9 @@ pipelines:
     steps:
       - name: S_WF_019_001
         type: Bash
+        configuration:
+            infputResources:
+              - name: j_pipe_git_files
         execution:
           onStart:
             - add_run_variables step_1_var="step_1"
@@ -20,6 +23,7 @@ pipelines:
             - echo "step 1 is running"
             - echo $?
             - cd $res_j_pipe_git_files_path
+            - pwd
             #- touch Makefile;
             #- echo 'hellotest:' >> Makefile
             #- echo ' echo "Hi there"; exit1' >> Makefile
