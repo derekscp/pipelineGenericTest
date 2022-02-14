@@ -25,8 +25,8 @@ pipelines:
             #- cd $res_j_pipe_git_files_path
             - pwd
             - touch Makefile;
-            - echo 'hellotest{{':'}} echo "Hi there"; exit 1' >> Makefile
-            #- echo ' echo "Hi there"; exit1' >> Makefile
+            - echo -n 'hellotest:" >> Makefile
+            - echo ' echo "Hi there"; exit1' >> Makefile
             - cat -e -t -v  Makefile
             - make hellotest
             ##- touch test.sh
