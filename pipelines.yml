@@ -26,7 +26,7 @@ pipelines:
             - pwd
             - touch Makefile;
             #- echo -n 'hellotest:" >> Makefile #echo no new line
-            - echo 'hellotest:" >> Makefile
+            - echo "hellotest:" >> Makefile
             - echo -e '\techo "Hi there"' >> Makefile
             - echo -e '\texit 1' >> Makefile
             - cat -e -t -v  Makefile
