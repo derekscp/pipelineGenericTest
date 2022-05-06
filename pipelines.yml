@@ -6,6 +6,8 @@ resources:
       path: derekscp/pipelineGenericTest
       branches:
         include: main
+      buildOn:
+        pullRequestCreate:     true
 
 pipelines:
   - name: S_WF_019
